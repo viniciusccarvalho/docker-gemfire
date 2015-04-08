@@ -1,0 +1,44 @@
+buildscript {
+    repositories {
+        maven { url "https://repo.spring.io/libs-release" }
+        maven { url "https://repo.spring.io/snapshot" }
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE")
+    }
+}
+
+
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
+	apply plugin: 'idea'
+	apply plugin: 'spring-boot'
+	
+	sourceCompatibility = 1.7
+	targetCompatibility = 1.7
+
+jar {
+baseName = 'gemfire-boot-server'
+version = '8.1.0'
+}
+	
+	repositories {
+   		mavenLocal()
+	    mavenCentral()
+    	maven { url "https://repo.spring.io/libs-release" }
+        maven { url "https://repo.spring.io/snapshot" }
+	}
+
+	
+	dependencies {
+        compile("org.springframework.boot:spring-boot-starter-web")
+        compile("org.springframework.data:spring-data-gemfire:1.7.0.BUILD-SNAPSHOT")
+    	testCompile("junit:junit:4.11")
+    	testCompile("org.mockito:mockito-all:1.9.5")
+	}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.0'
+}
