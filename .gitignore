@@ -13,8 +13,12 @@ local.properties
 .settings/
 .loadpath
 build/distributions
+build/classes
+build/tmp
+build/scripts
+build/dependency-cache
 target/
 *.original
 .gradle
-
+build/classes
 *.log*

@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ImportResource;
  * Created by vcarvalho on 4/7/15.
  */
 @SpringBootApplication
-@ImportResource("/cache-context.xml")
+@ImportResource("file:config/cache-context.xml")
 public class Application {
 
     public static void main(String[] args) {
